@@ -19,11 +19,11 @@ class FeatureEngineer:
         self.df = self.scale_amount()
         return self.df
         
-def split_features_target(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.Series]:
-    """Splits the DataFrame into features (X) and target (y)."""
-    TARGET = 'Class'
-    X = df.drop(TARGET, axis=1)
-    y = df[TARGET]
-    X = X.astype('float64')
-    y = y.astype('int')
-    return X, y
+    def split_features_target(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.Series]:
+        """Splits the DataFrame into features (X) and target (y)."""
+        TARGET = 'Class'
+        X = df.drop(TARGET, axis=1)
+        y = df[TARGET]
+        X = X.astype('float64')
+        y = y.astype('int')
+        return X, y
